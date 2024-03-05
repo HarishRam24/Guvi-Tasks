@@ -81,3 +81,77 @@ function getAlldata(data1, data2, ...all) {
 }
 getAlldata("har", "ish", "ram", "gan", "pan");
 
+// Array destructuring...
+//["element1", "element2"]
+
+const studArr = ["harish", "ram", "linga", "aara"];
+console.log("------normal structure------");
+console.log(studArr); 
+console.log(studArr[0]);
+console.log(studArr[1]);
+console.log("------de structure------");
+const [name1, ,name3] = studArr; 
+console.log(name1);
+console.log(name3); 
+
+//task 
+const men_Arr = [1, 3, 5, 6, ["harish", 24], 9];
+//print name and age 
+console.log("-----normal structure----");
+console.log(men_Arr);
+console.log("-----de structure-----");
+const [name, age] = ["harish", 24];
+console.log(name);
+console.log(age); 
+
+// Object destructuring 
+const data = {
+    firstName: "harish",
+    lastname: "ram",
+    pos: "student",
+    loc: "chennai",
+    company: {
+        loc: "chennai",
+        country: "India",
+        state: "Tamil Nadu",
+    },
+};
+console.log("....normal structure");
+console.log(data);
+console.log(data.firstName, data.lastname);
+const {
+    firstName,
+    pos,
+    lastname: Lname,
+    company: {loc, state: comState, country},
+} = data ;
+
+console.log(firstName); // harish
+console.log(pos); // student 
+console.log(Lname); // ram
+console.log(loc); // chenanai
+console.log(comState); // Tamil Nadu 
+console.log(country); // India 
+
+// Property shorthand 
+let batch = "FSD57WD2";
+let time = "8.00 AM";
+
+const schedule = {
+    topic: "ES6 JS", 
+    batch,
+    time, 
+};
+console.log(schedule);
+
+// Template literals 
+const greet = "How are you";
+const yourSelf = "I'm Harish Ram";
+const totalGreetmsg = "Hi" + " " + greet + " " + yourSelf;
+const templateStr = `Hi
+${greet}
+${yourSelf}
+`;
+console.log(totalGreetmsg);
+console.log(templateStr); 
+
