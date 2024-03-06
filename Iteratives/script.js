@@ -21,7 +21,7 @@ for (let i = 0; i < objKeys.length; i++) {
   console.log("objValues", objValues[i]);
 }
 
-//For each -> (arrays) (suitable for array)
+//For each -> (arrays) (best suitable for array)
 arr.forEach((value, index, accArr) => {
   console.log(
     `Value : ${value}
@@ -30,6 +30,7 @@ accArr : ${accArr}
           `
   );
 });
+
 //For each -> (objects)
 objKeys.forEach((value, index, accArr) => {
   console.log(
@@ -40,7 +41,7 @@ objKeys.forEach((value, index, accArr) => {
   );
 });
 
-//For in (object) suitable for object
+//For in (object) best suitable for object
 for (key in obj) {
   console.log(`
   object key : ${key}
@@ -57,7 +58,7 @@ array values " ${arr[idx]}
 }
 
 //For of string (best suitable for string)
-const sampleStr = "INDIACHINAJAPAN";
+const sampleStr = "INDIAJAPANISRAEL";
 for (str of sampleStr) {
   console.log(str);
 }
@@ -69,4 +70,4 @@ for (val of arr) {
 //For of obj (only by passing objKeys)
 for (keys of objKeys) {
   console.log(keys);
-} 
+}  
