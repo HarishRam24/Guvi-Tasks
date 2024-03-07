@@ -34,3 +34,117 @@ toy1.buildToy();
 toy1.info();
 toy2.buildToy();
 toy2.info();
+
+// this keyword 
+const Obj = {
+    land: "Property Land belonging to GrandFather",
+    getLand: function() {
+        console.log(this.land);
+    },
+    innerObj: {
+        land: "Property owned by Father",
+        getLand: function () {
+            console.log(this.land);
+        },
+        // Targets only the Global object 
+        getDetails: () => {
+            console.log("Inner Obj1", this);
+        },
+        //Targets the immediate parent 
+        getDetailsin() {
+            const arrowFunc = () => {
+                console.log("Inner Obj2", this);
+            };
+            arrowFunc();
+        },
+     },
+};
+console.log(Obj);
+Obj.getLand();
+Obj.innerObj.getLand();
+console.log("Global window", this);
+Obj.innerObj.getDetails();
+Obj.innerObj.getDetailsin(); 
+
+// constructor functions
+// it creates an object {} -> when `new` is added 
+function Product(name, price, type) {
+    this.product_name = name;
+    this.product_price = price;
+    this.product_type = type;
+    this.getDetails = function () {
+        console.log(`
+        Product Name : ${this.product_name}
+        Product Price : ${this.product_price}
+        Product Type : ${this.product_type}
+        `);
+    };
+} 
+
+Product.prototype.getPName = function () {
+    console.log("Product Name : ", this.product_name);
+};
+
+const MyMac = new Product("MAC23", 150000, "Electronics");
+console.log(MyMac);
+MyMac.getDetails();
+MyMac.getPName(); 
+
+// Classes in JS 
+// 4 Pillars -> Encapsulation, Inheritance, Abstraction, Polymorphism
+
+class Guvi {
+    //Encapsulation 
+    constructor(batch, topic, mentor, time, task) {
+        //{}
+        //POlymorphism 
+        this.batch = `FSD${batch}WD2` ; 
+        this.topic = topic;
+        this.mentor = mentor;
+        this.time = time;
+        this.task = task; 
+    }
+
+ //Abstraction
+ getTaskPercentage() {
+    let taskpercentage = (this.task * 100) / 67;
+    console.log("Task percentage", taskpercentage.toFixed(2));
+  }
+  getBatchDetails() {
+    console.log("The batch info is", this.batch);
+  }
+  getTodayTopic() {
+    console.log("The Topic info is", this.topic);
+  }
+  getOverALlDetails() {
+    console.log(`
+       Batch : ${this.batch}
+       Topic :  ${this.topic}
+       Mentor : ${this.mentor}
+    `);
+  }
+}
+
+const todaySession = new Guvi(57, "OOPS", "Sanjay", "8.10", 60);
+console.log(todaySession);
+todaySession.getTaskPercentage();
+
+//Inheritance
+class Student extends Guvi {
+    constructor(batch, topic, mentor, time, task, name, course) {
+      super(batch, topic, mentor, time, task);
+      this.student_name = name;
+      this.student_course = course;
+    }
+    getStudentInfo() {
+      console.log(`
+      StudentName : ${this.student_name}
+      StudentCourse : ${this.student_course}
+      `);
+    }
+  }
+  
+  const harish = new Student(57, "OOPS", "Sanjay", "8.10", 60, "Harish", "MERN");
+  console.log(harish);
+  harish.getStudentInfo();
+  harish.getTodayTopic();
