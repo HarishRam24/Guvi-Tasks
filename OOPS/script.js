@@ -134,7 +134,19 @@ class Student extends Guvi {
     constructor(batch, topic, mentor, time, task, name, course) {
       super(batch, topic, mentor, time, task);
       this.student_name = name;
-      this.student_course = course;
+      this._student_course = course;
+    }
+    // getter method 
+    get student_course() {
+        return this._student_course;
+    }
+    // setter method 
+    set student_course(newCourse) {
+        if (newCourse.lenghth <=0 || newCourse.lenghth > 10) {
+            console.log("ERROR");
+        } else {
+            this._student_course = newCourse;
+        }
     }
     getStudentInfo() {
       console.log(`
@@ -143,8 +155,12 @@ class Student extends Guvi {
       `);
     }
   }
-  
+
   const harish = new Student(57, "OOPS", "Sanjay", "8.10", 60, "Harish", "MERN");
   console.log(harish);
   harish.getStudentInfo();
   harish.getTodayTopic();
+  
+console.log(harish.student_course);
+harish.student_course = "FSD" ; 
+console.log(harish.student_course); 
