@@ -160,7 +160,7 @@ class Student extends Guvi {
   console.log(harish);
   harish.getStudentInfo();
   harish.getTodayTopic();
-  
+
 console.log(harish.student_course);
 harish.student_course = "FSD" ; 
 console.log(harish.student_course); 
