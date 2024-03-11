@@ -76,3 +76,135 @@ return value * 2;
 });
 console.log("mrf guvi array", mrf_arr);
 console.log("Guvi array", guviMapped); 
+
+// Filter 
+console.log("------Filter------");
+const filter_Arr = mrf_arr.filter((val,index,
+accArr) => {
+    console.log(`
+    Value : ${val}
+    Index : ${index}
+    accArr : ${accArr}
+    `);
+    return val != 4; 
+});
+console.log(mrf_arr);
+console.log(filter_Arr);
+
+//polyfill for filter 
+Array.prototype.guviFilter = function (fn) {
+    let newArr = [];
+    for (let i=0; i<this.length; i++) {
+        if (fn(this[i], i, this)) {
+            newArr.push(this[i]);
+        }
+    }
+    return newArr;
+};
+
+console.log("------Guvi Filter------");
+const guviFilter_Arr = mrf_arr.guviFilter((val, index,
+accArr) => {
+    console.log(`
+    Value : ${val}
+    Index : ${index}
+    accArr : ${accArr}
+    `);
+    return val != 4; 
+});
+console.log(mrf_arr);
+console.log(guviFilter_Arr); 
+
+// Reduce 
+console.log("------Reduce-----");
+// [1, 2, 3, 4, 5] , number, "string", [], {} 
+// var acc -> variable for storage 
+const reducedvalue = mrf_arr.reduce((acc, val, index, accArr) => {
+    console.log(`
+    Value : ${val}
+    Index : ${index}
+    accArr : ${accArr}
+    `);
+    return (acc += val);
+}, 0);
+console.log(mrf_arr);
+console.log(reducedvalue); 
+
+//polyfill for reduce 
+Array.prototype.guviReduce = function (fn) {
+    let newArr = [];
+    for (let i=0; i<this.length; i++) {
+        if (fn(this[i], i, this)) {
+            newArr.push(this[i]);
+        }
+    }
+    return newArr;
+};
+
+console.log("------Guvi Reduce------");
+const guviReduced_Arr = mrf_arr.guviReduce((acc, val, index,
+accArr) => {
+    console.log(`
+    Value : ${val}
+    Index : ${index}
+    accArr : ${accArr}
+    `);
+    return (acc += val);
+}, 0);
+console.log(mrf_arr);
+console.log(guviReduced_Arr); 
+
+// Chaining of MRF 
+const dummyArr = [1, 2, 3];
+const res = dummyArr
+.map((val) => val+3)
+.filter((val) => val != 4)
+.reduce((acc, val) => {
+    return (acc+= val);
+}, 0);
+console.log(res); 
+
+// TASK 
+console.log("------TASK------");
+const batch = [
+    {
+        studname: "Harish",
+        marks: 67,
+    },
+    {
+        studname: "Linga",
+        marks: 52,
+    },
+    {
+        studname: "Aara",
+        marks: 23,
+    },
+    {
+        studname: "Gan",
+        marks: 17,
+    },
+];
+
+// Add internal marks 15 for all students 
+// filter out the passed students (pass marks: 35)
+//average marks of passed students in batch()
+//avg = totalpassmarks/totalpassedstudents 
+
+console.log(batch); 
+function getStudentsPassPercentage(studArr,internalMarks) {
+    const result = studArr
+    .map((val) => val.marks + internalMarks)
+    .filter((val) => val >= 35)
+    .reduce(
+        (acc, val, index) => {
+            acc.totalMarks = acc.totalMarks + val;
+            acc.totalPassedStudents = index + 1;
+            acc.avgMarks = acc.totalMarks / acc.
+            totalPassedStudents
+            return acc;
+        },
+        {totalMarks:0 , totalPassedStudents:0, avgMarks:0}
+    );
+    console.log("Average Marks", result.avgMarks.toFixed(2));
+}
+getStudentsPassPercentage(batch, 15);
