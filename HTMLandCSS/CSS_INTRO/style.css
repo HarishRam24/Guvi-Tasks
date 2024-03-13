@@ -1,0 +1,76 @@
+h1 {
+    color: rgb(169, 169, 255) !important; 
+}
+/* Properties and values  */
+/* List property  */
+ul {
+    list-style-type: circle;
+}
+/* Font property */
+p {
+    font-size: 10px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+/* Text property */
+p {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+/* Border property */
+p {
+    /* border-width, border-style, border-color  */
+    border: 10px solid peachpuff;
+    border-radius: 10px;
+}
+
+.bg-lightblue {
+    background-color: lightblue;
+}
+
+.text-light {
+    color: aliceblue;
+}
+
+#text-it {
+    font-style: italic;
+}
+
+#text-medium {
+    font-size: medium;
+    color: black;
+}
+
+.container {
+    border: 5px solid plum;
+}
+
+.block {
+    display: inline;
+    background-color: lightpink;
+    margin: 5px;
+    /* width: 70px;
+    height: 20px; -> wont work in inline elements */ 
+    text-align: center;
+}
+
+.inline {
+    display: block;
+    background-color: lightpink;
+    margin: 5px;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+}
+
+.inline-block {
+    display: inline-block;
+    background-color: lightpink;
+    margin: 5px;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+}
