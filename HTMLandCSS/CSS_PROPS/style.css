@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#box-model {
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    padding: 10px;
+    border: 10px solid burlywood;
+    margin: 10px;
+}
+.btn {
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(244, 209, 244);
+    border: 2px solid rgb(190, 170, 170);
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: hotpink;
+    color: black;
+}
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+a:active {
+    color: green;
+}
+a:visited {
+    color: gray;
+}
+p {
+    color: blueviolet;
+    font-style: italic;
+    background: linear-gradient(to right, gold, rgb(253, 244, 198));
+}
+.p {
+    font-style: normal;
+    color: rgb(162, 41, 186);
+}
+.c {
+    font-style: inherit;
+    color: inherit;
+    background: radial-gradient(circle, rgb(255, 212, 133), rgb(202, 202, 249));
+}

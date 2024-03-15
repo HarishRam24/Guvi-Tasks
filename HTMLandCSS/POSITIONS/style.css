@@ -1,0 +1,31 @@
+#main-box {
+    border: 3px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(251, 204, 186);
+    padding: 10px 0px 10px 0px;
+    border-radius: 15px;
+}
+.box {
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    color: black;
+    text-align: center;
+    font-size: larger;
+    border-radius: 5px;
+}
+.absolute {
+    background-color: rgb(164, 126, 126);
+}
+.relative {
+    background-color: rgb(245, 157, 157);
+}
+.sticky {
+    background-color: rgb(249, 155, 249);
+}
+.fixed {
+    background-color: rgb(249, 216, 153);
+}
