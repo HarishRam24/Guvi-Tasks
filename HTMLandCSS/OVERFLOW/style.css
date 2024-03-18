@@ -1,0 +1,50 @@
+.overflow-main {
+    width: 500px;
+    height: 500px;
+    background-color: burlywood;
+    margin: 20px;
+    padding: 10px;
+    /* types : hidden, scroll, auto, visible */
+
+    /* shows the visibility */
+    /* overflow: visible;  */
+
+    /* hide the overflowing content  */
+    /* overflow: hidden; */
+
+    /* content that has to be scrolled will have a croll bar */
+    overflow: scroll;
+
+    /* gives scroll bar for whichever axis needs it */
+    /* overflow: auto; */
+}
+
+/* Measurements 
+Absolute measurements : mm, cm, m, km 
+pixel px - (1/96 of an inch) = 1px 
+point pt - (1/72 of an inch) = 1pt
+picas pc - (1/12 of an inch) = 1pc
+vw -> view width 
+vh -> view height */
+.mes {
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.div-1 {
+    width: 2pc;
+    height: 2pc;
+    background-color: blue;
+}
+
+.div-2 {
+    width: 32px;
+    height: 32px;
+    background-color: chocolate;
+}
