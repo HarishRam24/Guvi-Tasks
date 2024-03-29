@@ -1,0 +1,49 @@
+body {
+    background-color: #6c6c6c;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+  }
+  
+  img {
+    height: 225px;
+  }
+  
+  .country_row {
+    margin: 1%;
+    padding: 5% 0%;
+  }
+  
+  .card {
+    background-image: #a1a1a1;
+    box-shadow: 0 5x 5px 0 #b3b8a3;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .card-header {
+    background-color: #9febf2;
+    font-weight:bolder;
+    color: black;
+  }
+  
+  .weather-data {
+    text-align: center;
+    margin: auto;
+  }
+  
+  @media (max-width: 992px) {
+    .container {
+      padding-top: 10%;
+      margin: auto;
+    }
+    .weather-data {
+      text-align: center;
+      margin: auto;
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
